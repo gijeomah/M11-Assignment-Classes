@@ -16,19 +16,19 @@ class Movie{
 
   }
   //get property function
-  getMyProperty(){
+  getTitle(){
     return this.#title;
 
     
   }
   // Method to update the rating of the movie
   updateRating(newRating){
-    this.rating = newRating;
+    this.#rating = newRating;
   }
    // Method to display the movie's information
   displayInfo(){
     //Should Ido this instead: 
-    div.innerHTML = "<p> Title:"+ this.#title +"</p>" + "<p> Description: " + this.#description + "</p>"  + "<p> Cast: " + this.#cast + "</p>" + "<p> Rating: " + this.#rating + "</p>"
+    div.innerHTML += "<p> Title: "+ this.#title +"</p>" + "<p> Description: " + this.#description + "</p>"  + "<p> Cast: " + this.#cast + "</p>" + "<p> Rating: " + this.#rating + "</p>"
     
     
     
@@ -51,12 +51,20 @@ let films =  [movie_obj];
 //}
 
 function updateMovieRating(title, newRating){
-  for (let movie1 = 0; movie1 < films.length; movie1++ ){
-    if this.#title=
-  }
-  this.#title += title;
+  for (let i = 0; i < films.length; i++ ){
+    if (films[i].getTitle()== title){
+      films[i].updateRating(newRating)
+      div.innerHTML+="<p> <b>  Updated rating: " + "</b></p>";
+    };
+  };
+  //this.#title += title;
   //this.#rating += rating;
-}
+};
+//Caling the new function
+//let new_info = updateMovieRating("Jurassic Park", 9.1);
+updateMovieRating("Zootopia", 9.1);
+movie_obj.displayInfo()
+//new_info.displayInfo();
 
 //for (let i = 0; i < films.length; i++){
 
